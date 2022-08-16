@@ -16,7 +16,7 @@ the.aln <- phyclust::read.seqgen(aln)
 phyclust::write.fasta(seqdata = the.aln$org,
                       lower.case = FALSE,
                       code.type = the.aln$code.type,
-            filename = paste0("simulated_data/simulated_data_n=", ntaxa,
+            filename = paste0("../simulated_data/simulated_data_n=", ntaxa,
                               "_L=", seq.len,
                               "_rate=", mu,
                               ".fasta"),
