@@ -1,0 +1,11 @@
+
+Operator analysis
+Operator                                          Tuning   Count      Time     Time/Op  Pr(accept) Smoothed_Pr(accept)
+scale(nodeHeights(treeModel))                     0.151   291156     814      0.0      0.2336      0.22        
+subtreeSlide(treeModel)                           1.483   2911505    4045     0.0      0.2339      0.24        
+Narrow Exchange(treeModel)                                2912837    5524     0.0      0.7783      0.74        
+Wide Exchange(treeModel)                                  289969     329      0.0      0.4282      0.47        
+wilsonBalding(treeModel)                                  291443     304      0.0      0.208       0.18        
+scale(treeModel.rootHeight)                       0.133   291216     606      0.0      0.2343      0.21        
+uniform(nodeHeights(treeModel))                           2911874    6435     0.0      0.6745      0.59        
+
