@@ -3,15 +3,15 @@ library(phyclust)
 source("evaluate_target.r")
 ####
 # Read in alignment matrix
-fasta.name <- "../simulated_data/simulated_data_n=5_L=5000_rate=0.2.fasta"
+fasta.name <- "../simulated_data/posterior/simulated_data_n=5_L=5000_rate=0.2.fasta"
 aln.data <- ape::read.FASTA(fasta.name)
 # Convert to phangorn's format
 aln <- phangorn::as.phyDat(aln.data)
 # Read in the tree used to generate the data, for reference
-true.tree <- ape::read.nexus("../simulated_data/generating_tree_n=5.tree")
+true.tree <- ape::read.nexus("../simulated_data/posterior/generating_tree_n=5.tree")
 
 # Read in 10,000 trees sampled by BEAST
-BEAST.trees <- read.nexus("../simulated_data/seed_1_simulated_data_n=5_L=5000_rate=0.2.trees")
+BEAST.trees <- read.nexus("../simulated_data/posterior/seed1simulated_data_n=5_L=5000_rate=0.2.trees")
 
 priors <- unlist(
   parallel::mclapply(
@@ -28,7 +28,7 @@ posteriors <- unlist(
   )
 )
 
-the.log <- read.table("../simulated_data/seed_1_simulated_data_n=5_L=5000_rate=0.2.log",
+the.log <- read.table("../simulated_data/posterior/seed1simulated_data_n=5_L=5000_rate=0.2.log",
                       header = TRUE)
 
 result <- tibble::tibble(
